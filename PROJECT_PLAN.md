@@ -117,7 +117,7 @@ typedef struct s_stack
   - [x] `void rr(t_stack **a, t_stack **b)` - rotate both
 
 #### 3.4 Reverse Rotate Operations
-- [ ] Create `src/stack/reverse_rotate.c`
+- [x] Create `src/stack/reverse_rotate.c`
   - [ ] `void rra(t_stack **a)` - reverse rotate a
   - [ ] `void rrb(t_stack **b)` - reverse rotate b
   - [ ] `void rrr(t_stack **a, t_stack **b)` - reverse rotate both

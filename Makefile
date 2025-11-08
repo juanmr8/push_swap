@@ -6,7 +6,13 @@ RM          = rm -f
 LIBFT_DIR   = lib/libft
 LIBFT       = $(LIBFT_DIR)/libft.a
 
-SRCS        = main.c
+SRCS        =	main.c \
+				src/parsing/parse.c \
+				src/parsing/validate.c \
+				src/error.c \
+				src/utils/memory.c \
+				src/stack/stack_init.c \
+
 OBJS        = $(SRCS:.c=.o)
 
 all: $(NAME)

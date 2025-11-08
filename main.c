@@ -1,97 +1,85 @@
 #include "push_swap.h"
 
-void print_error_and_exit(void)
+static void free_split_args(char **args)
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
-long ft_atol(char *str)
-{
-	long result;
-	int sign;
 	int i;
 
-	result = 0;
-	sign = 1;
 	i = 0;
-	if (str[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	while (args[i])
+		free(args[i++]);
+	free(args);
 }
 
-int main (int argc, char *argv[])
+static int *init_numbers(int argc, char **argv, int *count)
 {
-	int i;
-	int j;
 	int *numbers;
-	long num;
+	char **args;
 
-	if (argc < 2)
-		return (0);
-	i = 1;
-
-	// Validate input - all are numbers
-	while (i < argc)
+	// Step 1: Handle single string input - split if necessary
+	args = NULL;
+	if (argc == 2)
 	{
-		j = 0;
-		if (argv[i][j] == '+' || argv[i][j] == '-')
-			j++;
-		if (argv[i][j] == '\0') 
-        	print_error_and_exit();
-		while (argv[i][j])
-		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
-				print_error_and_exit();
-			j++;
-		}
-		i++;
+		args = ft_split(argv[1], ' ');
+		*count = 0;
+		while (args[*count])
+			(*count)++;
+
+		// Step 2: Validate all inputs have proper format
+		validate_input(*count, args);
+
+		// Step 3: Parse strings to integers
+		numbers = parse_input(*count, args);
+
+		// Step 4: Check for duplicates
+		check_duplicates(numbers, *count);
+
+		// Step 5: Free split array
+		free_split_args(args);
+	}
+	else
+	{
+		*count = argc - 1;
+
+		// Step 2: Validate all inputs have proper format (skip program name)
+		validate_input(*count, &argv[1]);
+
+		// Step 3: Parse strings to integers (skip program name)
+		numbers = parse_input(*count, &argv[1]);
+
+		// Step 4: Check for duplicates
+		check_duplicates(numbers, *count);
 	}
 
-	// Parse numbers and store in array;
-	numbers = malloc(sizeof(int) * (argc - 1));
 	if (!numbers)
-		return (1);
-	i = 1;
-	while (i < argc)
-	{
-		num = ft_atol(argv[i]);
-		if (num > 2147483647 || num < -2147483648)
-		{
-			free(numbers);
-			print_error_and_exit();
-		}
-		numbers[i - 1] = num;
-		i++;
- 	}
+		return (NULL);
 
-	// Check dupes
-	i = 0;
-	while (i < argc -1)
+	return (numbers);
+}
+
+static t_stack *init_stack(int *numbers, int count)
+{
+	t_stack *stack;
+
+	stack = array_to_stack(numbers, count);
+	if (!stack)
 	{
-		int j = i + 1;
-		while (j < argc - 1)
-		{
-			if (numbers[i] == numbers[j])
-			{
-				free(numbers);
-				print_error_and_exit();
-			}
-			j++;
-		}
-		i++;
+		free(numbers);
+		print_error_and_exit();
 	}
-	write(1, "Valid", 5);
-	free(numbers);
-	return (0);
+	return (stack);
+}
+
+int main(int argc, char **argv)
+{
+    int *numbers;
+    int count;
+	t_stack *stack_a;
+
+    if (argc < 2)
+        return (0);
+    numbers = init_numbers(argc, argv, &count);
+	stack_a = init_stack(numbers, count);
+    free(numbers);
+	free_stack(&stack_a);
+    return (0);
 }

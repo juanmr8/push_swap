@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 16:44:39 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/11/07 20:06:08 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/11/08 12:12:52 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ t_stack *stack_last(t_stack *stack)
 		return (NULL);
 	i = stack;
 	while (i->next != NULL)
-	{
 		i = i->next;
-	}
 	return (i);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:12:49 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/11/08 11:18:06 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/11/08 12:27:59 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	validate_input(int argc, char **argv);
 void	check_duplicates(int *numbers, int count);
 int		is_valid_range(long num);
 t_stack	*stack_new(int value);
-t_stack *array_to_stack(int *arr, int size);
+t_stack	*stack_last(t_stack *stack);
+t_stack	*array_to_stack(int *arr, int size);
 void	stack_add_back(t_stack **stack, t_stack *node);
 void 	free_stack(t_stack **stack);
 int		is_sorted(t_stack *stack);
@@ -45,5 +46,9 @@ void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **stack_a, t_stack **stack_b);
+
 
 #endif

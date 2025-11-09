@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:27:55 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/11/09 19:28:09 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/11/09 19:31:49 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b)
 	else if (size <= 5)
 		sort_five(stack_a, stack_b);
 	// else: Large sort (TODO)
-
+	
 }
 
 int main(int argc, char **argv)

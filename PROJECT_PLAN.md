@@ -174,17 +174,6 @@ etc.
 - [ ] Target for 100: < 700 operations
 - [ ] Target for 500: < 5500 operations
 
-**Option B: Turkish Algorithm** (More advanced)
-- [ ] Calculate cost for each move
-- [ ] Choose cheapest move
-- [ ] Optimize rotations (use rr, rrr)
-- [ ] Better performance but complex
-
-**Option C: Radix Sort**
-- [ ] Sort by binary bits
-- [ ] Very efficient
-- [ ] Simple to implement
-- [ ] Consistent performance
 
 #### 4.5 Index/Rank Optimization
 - [ ] Create `src/sort/indexing.c`

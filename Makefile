@@ -12,6 +12,7 @@ SRCS        =	main.c \
 				src/error.c \
 				src/utils/memory.c \
 				src/stack/stack_init.c \
+				src/stack/stack_check.c \
 
 OBJS        = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:44:28 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/11/06 16:44:51 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:10:57 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ int	*parse_input(int argc, char **argv)
 
 	numbers = malloc(sizeof(int) * argc);
 	if (!numbers)
-		print_error_and_exit();
+		error_malloc_failed();
 	i = 0;
 	while (i < argc)
 	{
 		num = ft_atol(argv[i]);
-        if (!is_valid_range(num))
+		if (!is_valid_range(num))
 		{
 			free(numbers);
-			print_error_and_exit();
+			error_out_of_range();
 		}
 		numbers[i] = num;
 		i++;

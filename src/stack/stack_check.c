@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 20:32:12 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/11/08 10:10:44 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:32:30 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int is_sorted(t_stack *stack)
 		return(1);
 	while(stack->next)
 	{
-		if (stack->value < stack->next->value)
+		if (stack->value > stack->next->value)
 			return (0);
 		stack = stack->next;
 	}

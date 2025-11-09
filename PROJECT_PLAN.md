@@ -118,9 +118,9 @@ typedef struct s_stack
 
 #### 3.4 Reverse Rotate Operations
 - [x] Create `src/stack/reverse_rotate.c`
-  - [ ] `void rra(t_stack **a)` - reverse rotate a
-  - [ ] `void rrb(t_stack **b)` - reverse rotate b
-  - [ ] `void rrr(t_stack **a, t_stack **b)` - reverse rotate both
+  - [x] `void rra(t_stack **a)` - reverse rotate a
+  - [x] `void rrb(t_stack **b)` - reverse rotate b
+  - [x] `void rrr(t_stack **a, t_stack **b)` - reverse rotate both
 
 **Important:** Each operation must print its name to stdout!
 ```c
@@ -137,10 +137,10 @@ void sa(t_stack **a)
 **Goal:** Sort efficiently based on stack size
 
 #### 4.1 Edge Cases
-- [ ] Create `src/sort/sort_utils.c`
-  - [ ] Handle empty input (exit)
-  - [ ] Handle single number (exit)
-  - [ ] Handle already sorted (exit)
+- [x] Create `src/sort/sort_utils.c`
+  - [x] Handle empty input (exit)
+  - [x] Handle single number (exit)
+  - [x] Handle already sorted (exit)
 
 #### 4.2 Small Sorts (2-3 elements)
 - [ ] Create `src/sort/sort_small.c`

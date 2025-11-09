@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/09 11:27:55 by jmora-ro          #+#    #+#             */
+/*   Updated: 2025/11/09 11:30:31 by jmora-ro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void free_split_args(char **args)
@@ -64,9 +76,22 @@ static t_stack *init_stack(int *numbers, int count)
 	if (!stack)
 	{
 		free(numbers);
-		print_error_and_exit();
+		error_malloc_failed();
 	}
 	return (stack);
+}
+
+static void	push_swap(t_stack **stack_a)
+{
+	// int size;
+
+	if (is_sorted(*stack_a))
+	{
+		write(1, "Stack sorted", 12);
+		return ;
+	}
+	/** Remaining logic  */
+
 }
 
 int main(int argc, char **argv)
@@ -80,6 +105,7 @@ int main(int argc, char **argv)
     numbers = init_numbers(argc, argv, &count);
 	stack_a = init_stack(numbers, count);
     free(numbers);
+	push_swap(&stack_a);
 	free_stack(&stack_a);
     return (0);
 }

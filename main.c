@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:27:55 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/11/09 19:31:49 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/11/11 11:05:57 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,6 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	int size;
 
-	if (is_sorted(*stack_a))
-	{
-		write(1, "Stack sorted", 12);
-		return ;
-	}
-
 	size = stack_size(*stack_a);
 	if (size == 2)
 		sort_two(stack_a);
@@ -98,8 +92,9 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b)
 		sort_three(stack_a);
 	else if (size <= 5)
 		sort_five(stack_a, stack_b);
-	// else: Large sort (TODO)
-	
+	else
+	 	sort_large(stack_a, stack_b);
+
 }
 
 int main(int argc, char **argv)

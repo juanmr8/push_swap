@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:45:45 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/11/09 11:33:28 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/11/11 11:17:37 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	validate_input(int argc, char **argv)
 				error_non_numeric();
 			j++;
 		}
-		ft_putstr_fd(argv[i], 1);
-		write(1, "\n", 1);
 		i++;
 	}
 }

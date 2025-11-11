@@ -6,7 +6,7 @@
 /*   By: jmora-ro <jmora-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 18:43:27 by jmora-ro          #+#    #+#             */
-/*   Updated: 2025/11/09 19:44:30 by jmora-ro         ###   ########.fr       */
+/*   Updated: 2025/11/11 10:38:59 by jmora-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	push_min_to_b(t_stack **a, t_stack **b)
 		while ((*a)->value != min)
 			ra(a);
 	}
-	else
+	else // Min esta en el 50% inferior -> rotamos desde abajo
 	{
 		while ((*a)->value != min)
 			rra(a);
